@@ -1,0 +1,170 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+  android:layout_width="match_parent"
+  android:layout_height="match_parent"
+  android:padding="16dp"
+  tools:context=".ui.main.MainActivity">
+
+  <!-- TODO (2 points): Convert to ConstraintLayout -->
+  <!-- TODO (1 point): Address Android Studio warnings -->
+  <ProgressBar
+      android:id="@+id/progessBar"
+      android:layout_width="50dp"
+      android:layout_height="50dp"
+      android:contentDescription="@string/progress_loader"
+      android:visibility="gone"
+      app:layout_constraintBottom_toBottomOf="parent"
+      app:layout_constraintEnd_toEndOf="parent"
+      app:layout_constraintStart_toStartOf="parent"
+      app:layout_constraintTop_toTopOf="parent" />
+
+
+  <TextView
+      android:id="@+id/main_title"
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      android:layout_marginStart="16dp"
+      android:layout_marginEnd="16dp"
+      android:text="@string/my_random_user"
+      android:textAppearance="?textAppearanceHeadline4"
+      app:layout_constraintEnd_toEndOf="parent"
+      app:layout_constraintStart_toStartOf="parent"
+      app:layout_constraintTop_toTopOf="parent" />
+
+  <ImageView
+      android:id="@+id/userImageView"
+      android:layout_width="100dp"
+      android:layout_height="100dp"
+      android:layout_marginStart="8dp"
+      android:layout_marginTop="8dp"
+      android:contentDescription="@string/user_image"
+      android:background="#33aaaaaa"
+      app:layout_constraintStart_toStartOf="parent"
+      app:layout_constraintTop_toBottomOf="@+id/main_title" />
+
+  <androidx.constraintlayout.widget.ConstraintLayout
+      android:layout_width="0dp"
+      android:layout_height="wrap_content"
+      android:orientation="vertical"
+      android:padding="8dp"
+      app:layout_constraintBottom_toBottomOf="@+id/userImageView"
+      app:layout_constraintEnd_toEndOf="parent"
+      app:layout_constraintStart_toEndOf="@+id/userImageView"
+      app:layout_constraintTop_toTopOf="@+id/userImageView">
+
+    <LinearLayout
+        android:id="@+id/linearLayout2"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+      <TextView
+          android:id="@+id/main_name_label"
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          android:text="@string/name"
+          android:textAppearance="?textAppearanceBody2"
+          android:textStyle="bold" />
+
+      <TextView
+          android:id="@+id/userNameTextView"
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          android:layout_marginStart="4dp"
+          android:textAppearance="?textAppearanceBody2"
+          tools:text="Jon" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/linearLayout"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintEnd_toEndOf="parent"
+
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/linearLayout2">
+
+      <TextView
+          android:id="@+id/main_email_label"
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          android:text="@string/email"
+          android:textAppearance="?textAppearanceBody2"
+          android:textStyle="bold" />
+
+      <TextView
+          android:id="@+id/userEmailTextView"
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          android:layout_marginStart="4dp"
+          android:textAppearance="?textAppearanceBody2"
+          tools:text="robert@test.com" />
+
+    </LinearLayout>
+
+
+    <Button
+        android:id="@+id/seeDetailsButton"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
+        android:text="@string/view_details"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/linearLayout"
+        tools:ignore="VisualLintButtonSize" />
+
+  </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+    <Button
+        android:id="@+id/refreshUserButton"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:text="@string/refresh_random_user"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/userImageView"
+        tools:ignore="VisualLintButtonSize" />
+
+    <View
+        android:id="@+id/main_divider"
+        android:layout_width="match_parent"
+        android:layout_height="2dp"
+        android:layout_below="@id/refreshUserButton"
+        android:background="#11111111"
+        app:layout_constraintTop_toBottomOf="@+id/refreshUserButton"
+        tools:layout_editor_absoluteX="16dp" />
+
+    <Button
+        android:id="@+id/showUserListButton"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/main_divider"
+        android:text="@string/show_10_users"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/main_divider"
+        tools:ignore="VisualLintButtonSize" />
+
+    <!-- TODO (5 points): Convert to RecyclerView -->
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/userListView"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_below="@id/showUserListButton"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/showUserListButton" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

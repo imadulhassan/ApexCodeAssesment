@@ -1,0 +1,22 @@
+<resources>
+    <string name="app_name">Apex Code Assesment</string>
+    <string name="action_settings">Settings</string>
+    <string name="my_random_user">My random user</string>
+    <string name="view_details">View details</string>
+    <string name="details_name">Name: %1$s %2$s</string>
+    <string name="details_email">Email: %s</string>
+    <string name="details_location">Location: (%1$s, %2$s)</string>
+    <string name="calculate_distance_button_details">Calculate distance from current location</string>
+    <string name="calculate_distance_button">Calculate distance</string>
+    <string name="location_random_user">Location of random user: (%1$s, %2$s)</string>
+    <string name="location_phone">Location of this phone: (%1$s, %2$s)</string>
+    <string name="location_result_miles">[%f] miles</string>
+    <string name="user_image">User Image</string>
+    <string name="name">Name:</string>
+    <string name="email">Email:</string>
+    <string name="refresh_random_user">Refresh random user</string>
+    <string name="show_10_users">Show 10 users</string>
+    <string name="progress_loader">Progress Loader</string>
+    <string name="calculated_distance">Distance in : %1$s  K   %2$s  M</string>
+    <string name="title_activity_compose">ComposeActivity</string>
+</resources>
